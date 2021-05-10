@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_e-0000e46c-4154-8000-9af2-01075c01075c_158</versionUuid>
+    <group>
+        <name>Workforce Safety Users</name>
+        <securityMap>SECURITYMAP_TEAM</securityMap>
+        <uuid>_e-0000e428-dd70-8000-d620-011e94011e94_33</uuid>
+        <groupTypeUuid>SYSTEM_GROUP_TYPE_CUSTOM</groupTypeUuid>
+        <description>All users within your organization can be added to this group to be a part of the Workforce Safety solution, where employees can check-in with their work and health status and stay updated of the latest information from your organization regarding the crisis.</description>
+        <delegatedCreation>false</delegatedCreation>
+        <memberPolicy>MEMBERPOLICY_CLOSED</memberPolicy>
+        <viewingPolicy>VIEWINGPOLICY_LOW</viewingPolicy>
+        <attributes/>
+    </group>
+    <members>
+        <users/>
+        <groups>
+            <groupUuid>_e-0000d398-70cf-8000-9aee-01075c01075c_6</groupUuid>
+            <groupUuid>_e-0000e428-dd70-8000-d620-011e94011e94_35</groupUuid>
+            <groupUuid>_e-0000e428-dd70-8000-d620-011e94011e94_31</groupUuid>
+        </groups>
+    </members>
+    <admins>
+        <users/>
+        <groups>
+            <groupUuid>_e-0000e428-dd70-8000-d620-011e94011e94_31</groupUuid>
+        </groups>
+    </admins>
+    <ruleSet/>
+    <history>
+        <historyInfo versionUuid="_e-0000e428-dd70-8000-d620-011e94011e94_34"/>
+        <historyInfo versionUuid="_e-0000e46c-4154-8000-9af2-01075c01075c_148"/>
+        <historyInfo versionUuid="_e-0000e46c-4154-8000-9af2-01075c01075c_158"/>
+        <historyInfo versionUuid="_e-0000e4c4-1482-8000-9af4-01075c01075c_199"/>
+        <historyInfo versionUuid="_e-0000e4c4-1482-8000-9af4-01075c01075c_215"/>
+    </history>
+</groupHaul>

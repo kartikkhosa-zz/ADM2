@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e4f2-a390-8000-9bd9-011c48011c48_25732</versionUuid>
+    <rule>
+        <name>Testing_H_2</name>
+        <uuid>_a-0000e4f2-a390-8000-9bd9-011c48011c48_25714</uuid>
+        <description></description>
+        <parentUuid>_a-0000e4f2-a390-8000-9bd9-011c48011c48_25697</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!path: {4,2},
+  local!selection: 2,
+  #"SYSTEM_SYSRULES_hierarchyBrowserFieldColumns"(
+    firstColumnValues: enumerate(9),
+    nodeConfigs: #"SYSTEM_SYSRULES_hierarchyBrowserFieldColumnsNode"(
+      id: fv!nodeValue,
+      label: "Node" &amp; fv!nodeValue,
+      image: #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"("PREVIEW")),
+      isDrillable: 1 - mod(fv!nodeValue, 2),
+      isSelectable: mod(fv!nodeValue, 3),
+      nextColumnCount: fv!nodeValue
+    ),
+    pathValue: local!path,
+    nextColumnValues: enumerate(fv!nodeValue),
+    selectionValue: local!selection,
+    pathSaveInto: local!path,
+    selectionSaveInto: local!selection
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e4f2-a390-8000-9bd9-011c48011c48_25732"/>
+    </history>
+</contentHaul>

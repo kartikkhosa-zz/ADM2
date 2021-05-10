@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_e-0000e495-e245-8000-9af3-01075c01075c_181</versionUuid>
+    <group>
+        <name>Workforce Safety Configuration Managers</name>
+        <securityMap>SECURITYMAP_PUBLIC</securityMap>
+        <uuid>_e-0000e495-e245-8000-9af3-01075c01075c_180</uuid>
+        <groupTypeUuid>SYSTEM_GROUP_TYPE_CUSTOM</groupTypeUuid>
+        <description>Configuration Managers user have only access to "Configure Site" Tab in Response management Command Site, This User Can perform all the option (Under configure site) except delete user details</description>
+        <delegatedCreation>false</delegatedCreation>
+        <memberPolicy>MEMBERPOLICY_CLOSED</memberPolicy>
+        <viewingPolicy>VIEWINGPOLICY_LOW</viewingPolicy>
+        <attributes/>
+    </group>
+    <members>
+        <users/>
+        <groups/>
+    </members>
+    <admins>
+        <users/>
+        <groups>
+            <groupUuid>_e-0000e428-dd70-8000-d620-011e94011e94_31</groupUuid>
+        </groups>
+    </admins>
+    <ruleSet/>
+    <history>
+        <historyInfo versionUuid="_e-0000e495-e245-8000-9af3-01075c01075c_181"/>
+        <historyInfo versionUuid="_e-0000e4c4-1482-8000-9af4-01075c01075c_203"/>
+        <historyInfo versionUuid="_e-0000e4c4-1482-8000-9af4-01075c01075c_212"/>
+    </history>
+</groupHaul>

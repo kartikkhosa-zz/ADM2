@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_e-0000e61d-e43b-8000-9b5e-01075c01075c_6810</versionUuid>
+    <group>
+        <name>[Deprecated] All Users</name>
+        <securityMap>SECURITYMAP_PUBLIC</securityMap>
+        <uuid>_e-0000d398-70cf-8000-9aee-01075c01075c_6</uuid>
+        <groupTypeUuid>SYSTEM_GROUP_TYPE_CUSTOM</groupTypeUuid>
+        <description>A group containing all users on the system.</description>
+        <delegatedCreation>false</delegatedCreation>
+        <memberPolicy>MEMBERPOLICY_AUTOMATIC</memberPolicy>
+        <viewingPolicy>VIEWINGPOLICY_LOW</viewingPolicy>
+        <attributes/>
+    </group>
+    <members>
+        <users/>
+        <groups/>
+    </members>
+    <admins>
+        <users>
+            <userUuid>Administrator</userUuid>
+        </users>
+        <groups/>
+    </admins>
+    <ruleSet>
+        <expressions>
+            <entityTypeName>u</entityTypeName>
+            <conditions>
+                <attributeName>username</attributeName>
+                <operatorId>6</operatorId>
+                <value>?#!</value>
+            </conditions>
+        </expressions>
+    </ruleSet>
+    <history>
+        <historyInfo versionUuid="_e-0000e431-019e-8000-9aee-01075c01075c_33"/>
+        <historyInfo versionUuid="_e-0000e49a-c194-8000-9e02-01075c01075c_1676"/>
+        <historyInfo versionUuid="_e-0000e447-933d-8000-9af7-01075c01075c_321"/>
+        <historyInfo versionUuid="_e-0000e402-38cf-8000-9b3c-01075c01075c_944"/>
+        <historyInfo versionUuid="_e-0000e45e-b78f-8000-9b98-01075c01075c_1490"/>
+        <historyInfo versionUuid="_e-0000e58f-b0c8-8000-9b65-01075c01075c_1999"/>
+        <historyInfo versionUuid="_e-0000e61d-e43b-8000-9b5e-01075c01075c_6810"/>
+    </history>
+</groupHaul>

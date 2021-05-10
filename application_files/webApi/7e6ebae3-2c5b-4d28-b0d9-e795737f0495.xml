@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webApiHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>2ed793c3-faae-454b-8093-24e4d49a34c4</versionUuid>
+    <webApi a:uuid="7e6ebae3-2c5b-4d28-b0d9-e795737f0495" name="api">
+        <a:description>api</a:description>
+        <a:expression></a:expression>
+        <a:urlAlias>gmBj9w</a:urlAlias>
+        <a:httpMethod>POST</a:httpMethod>
+        <a:system>false</a:system>
+        <a:requestBodyType>NONE</a:requestBodyType>
+    </webApi>
+    <roleMap/>
+    <history>
+        <historyInfo versionUuid="2ed793c3-faae-454b-8093-24e4d49a34c4"/>
+    </history>
+</webApiHaul>

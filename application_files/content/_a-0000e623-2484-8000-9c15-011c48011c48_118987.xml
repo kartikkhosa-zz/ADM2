@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e623-2484-8000-9c15-011c48011c48_118999</versionUuid>
+    <rule>
+        <name>Gridlayout</name>
+        <uuid>_a-0000e623-2484-8000-9c15-011c48011c48_118987</uuid>
+        <description></description>
+        <parentUuid>_a-0000e5bd-bd39-8000-9bdd-011c48011c48_32266</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=a!localVariables(
+  local!items: {
+    {item: "Item 1", qty: 1, unitPrice: 10},
+    {item: "Item 2", qty: 2, unitPrice: 20},
+    {item: "Item 3", qty: 3, unitPrice: 30},
+    {item: "Item 4", qty: 4, unitPrice: 40},
+    {item: "Item 5", qty: 5, unitPrice: 50},
+    {item: "Item 6", qty: 6, unitPrice: 60},
+    {item: "Item 7", qty: 7, unitPrice: 70},
+    {item: "Item 8", qty: 8, unitPrice: 80},
+    {item: "Item 9", qty: 9, unitPrice: 90},
+    {item: "Item 10", qty: 10, unitPrice: 100}
+  },
+  #"SYSTEM_SYSRULES_gridLayout"(
+    label: "Products",
+    instructions: "Update the item name, quantity, or unit price.",
+    headerCells: {
+      #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Item"),
+      #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Qty"),
+      #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Unit Price"),
+      #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Total", align: "RIGHT")
+    },
+    columnConfigs: {
+      #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(width: "DISTRIBUTE", weight: 5),
+      #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(width: "DISTRIBUTE"),
+      #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(width: "DISTRIBUTE"),
+      #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(width: "DISTRIBUTE", weight: 2)
+    },
+    rows: #"SYSTEM_SYSRULES_forEach"(
+      items: local!items,
+      expression: #"SYSTEM_SYSRULES_gridRowLayout"(
+        contents: {
+          #"SYSTEM_SYSRULES_textField"(
+            value: fv!item.item,
+            saveInto: fv!item.item
+          ),
+          #"SYSTEM_SYSRULES_integerField"(
+            value: fv!item.qty,
+            saveInto: fv!item.qty
+          ),
+          #"SYSTEM_SYSRULES_floatingPointField"(
+            value: fv!item.unitPrice,
+            saveInto: fv!item.unitPrice
+          ),
+          #"SYSTEM_SYSRULES_textField"(
+            value: dollar(tointeger(fv!item.qty) * todecimal(fv!item.unitPrice)),
+            readOnly: true,
+            align: "RIGHT"
+          )
+        }
+      )  
+    ),
+    height: "SHORT",
+    rowHeader: 1
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e623-2484-8000-9c15-011c48011c48_118999"/>
+    </history>
+</contentHaul>

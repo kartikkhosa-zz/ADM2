@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_e-0000e495-e245-8000-9af3-01075c01075c_182</versionUuid>
+    <group>
+        <name>Workforce Safety Response Managers</name>
+        <securityMap>SECURITYMAP_PUBLIC</securityMap>
+        <uuid>_e-0000e430-9088-8000-9aee-01075c01075c_35</uuid>
+        <groupTypeUuid>SYSTEM_GROUP_TYPE_CUSTOM</groupTypeUuid>
+        <description>In times of crisis, many organizations’ Human Resources (HR) departments, leaders, and/or officials stand up a command center to respond to concerns or issues from employees. Members of this group can view all incoming, possibly sensitive, data from employees. They can also see aggregate reporting of their employees, facilities, and volunteer efforts to provide real-time insight into the crisis.</description>
+        <delegatedCreation>false</delegatedCreation>
+        <memberPolicy>MEMBERPOLICY_CLOSED</memberPolicy>
+        <viewingPolicy>VIEWINGPOLICY_LOW</viewingPolicy>
+        <attributes/>
+    </group>
+    <members>
+        <users/>
+        <groups/>
+    </members>
+    <admins>
+        <users/>
+        <groups>
+            <groupUuid>_e-0000e428-dd70-8000-d620-011e94011e94_31</groupUuid>
+        </groups>
+    </admins>
+    <ruleSet/>
+    <history>
+        <historyInfo versionUuid="_e-0000e430-9088-8000-9aee-01075c01075c_36"/>
+        <historyInfo versionUuid="_e-0000e46c-4154-8000-9af2-01075c01075c_147"/>
+        <historyInfo versionUuid="_e-0000e46c-4154-8000-9af2-01075c01075c_155"/>
+        <historyInfo versionUuid="_e-0000e495-e245-8000-9af3-01075c01075c_182"/>
+        <historyInfo versionUuid="_e-0000e4c4-1482-8000-9af4-01075c01075c_200"/>
+        <historyInfo versionUuid="_e-0000e4c4-1482-8000-9af4-01075c01075c_211"/>
+    </history>
+</groupHaul>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e5eb-e792-8000-9bf3-011c48011c48_40409</versionUuid>
+    <rule>
+        <name>505508_UploadFile</name>
+        <uuid>_a-0000e505-0a04-8000-9be2-011c48011c48_26833</uuid>
+        <description>Interface to upload a simple file</description>
+        <parentUuid>_a-0000e505-0a04-8000-9be2-011c48011c48_26828</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>  #"SYSTEM_SYSRULES_formLayout_v1"(
+    label: "DO THE NEEDFUL",
+    contents: {
+      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+        contents: {
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_imageField_v1"(
+                    images: #"SYSTEM_SYSRULES_documentImage"(
+                      document: #"_a-0000e505-0a04-8000-9be2-011c48011c48_27403"
+                    ),
+                    size: "FIT",
+                    align: "CENTER"
+                  ),
+                  #"SYSTEM_SYSRULES_fileUploadField_v1"(
+                    label: "File Upload",
+                    labelPosition: "ABOVE",
+                    target: #"_a-0000e505-0a04-8000-9be2-011c48011c48_27313",
+                    value: ri!file.fileId,
+                    saveInto: ri!file.fileId,
+                    validations: {}
+                  )
+                }
+              )
+            },
+            stackWhen: {
+              "PHONE",
+              "TABLET_PORTRAIT"
+            }
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_radioButtonField"(
+        label: "Radio Buttons",
+        labelPosition: "ABOVE",
+        choiceLabels: {"Option 1", "Option 2"},
+        choiceValues: {1, 2},
+        saveInto: {},
+        choiceLayout: "STACKED",
+        validations: {}
+      )
+    },
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Submit",
+          saveInto: {},
+          submit: true,
+          style: "PRIMARY"
+        )
+      }
+    )
+  )</definition>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>file</name>
+            <type>
+                <name>File</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e505-0a04-8000-9be2-011c48011c48_27648"/>
+        <historyInfo versionUuid="_a-0000e5eb-e792-8000-9bf3-011c48011c48_40409"/>
+    </history>
+</contentHaul>

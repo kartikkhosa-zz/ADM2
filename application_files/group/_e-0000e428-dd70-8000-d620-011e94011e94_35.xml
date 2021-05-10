@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_e-0000e46c-4154-8000-9af2-01075c01075c_153</versionUuid>
+    <group>
+        <name>Workforce Safety Command Center</name>
+        <securityMap>SECURITYMAP_PUBLIC</securityMap>
+        <uuid>_e-0000e428-dd70-8000-d620-011e94011e94_35</uuid>
+        <groupTypeUuid>SYSTEM_GROUP_TYPE_CUSTOM</groupTypeUuid>
+        <description>Power users of the application who have access to the Response Management Command Site (includes HR Managers, Volunteer Coordinators, Screeners)</description>
+        <delegatedCreation>false</delegatedCreation>
+        <memberPolicy>MEMBERPOLICY_CLOSED</memberPolicy>
+        <viewingPolicy>VIEWINGPOLICY_LOW</viewingPolicy>
+        <attributes/>
+    </group>
+    <members>
+        <users/>
+        <groups>
+            <groupUuid>_e-0000e495-e245-8000-9af3-01075c01075c_180</groupUuid>
+            <groupUuid>_e-0000e430-9088-8000-9aee-01075c01075c_35</groupUuid>
+            <groupUuid>_e-0000e45c-612d-8000-9af0-01075c01075c_121</groupUuid>
+            <groupUuid>_e-0000e430-9088-8000-9aee-01075c01075c_33</groupUuid>
+            <groupUuid>_e-0000e46c-4154-8000-9af2-01075c01075c_159</groupUuid>
+        </groups>
+    </members>
+    <admins>
+        <users/>
+        <groups>
+            <groupUuid>_e-0000e428-dd70-8000-d620-011e94011e94_31</groupUuid>
+        </groups>
+    </admins>
+    <ruleSet/>
+    <history>
+        <historyInfo versionUuid="_e-0000e428-dd70-8000-d620-011e94011e94_36"/>
+        <historyInfo versionUuid="_e-0000e46c-4154-8000-9af2-01075c01075c_145"/>
+        <historyInfo versionUuid="_e-0000e46c-4154-8000-9af2-01075c01075c_153"/>
+        <historyInfo versionUuid="_e-0000e4c4-1482-8000-9af4-01075c01075c_198"/>
+        <historyInfo versionUuid="_e-0000e4c4-1482-8000-9af4-01075c01075c_214"/>
+    </history>
+</groupHaul>

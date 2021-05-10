@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e540-6323-8000-9bf9-011c48011c48_53746</versionUuid>
+    <rule>
+        <name>grid</name>
+        <uuid>_a-0000e540-6323-8000-9bf9-011c48011c48_53735</uuid>
+        <description></description>
+        <parentUuid>_a-0000e4f2-a390-8000-9bd9-011c48011c48_25697</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!paging: #"SYSTEM_SYSRULES_pagingInfo"(startIndex: 1, batchSize: 10),
+  local!brokers: {
+    { name: "Marsh USA, Inc", prem: 2001007, subs: 123, quotes: 67, binds: 23},
+    { name: "Willis", prem: 1850000, subs: 200, quotes: 178, binds: 14},
+    { name: "ACME, Inc", prem: 1780346, subs: 178, quotes: 34, binds: 34},
+    { name: "R-T Speciality, LLC", prem: 1500300, subs: 134, quotes: 100, binds: 78},
+    { name: "AmWINS Group", prem: 1401001, subs: 123, quotes: 67, binds: 23},
+    { name: "Aon Risk Services", prem: 1350000, subs: 200, quotes: 178, binds: 14},
+    { name: "Alliant Insurance Services, Inc.", prem: 1280343, subs: 178, quotes: 34, binds: 34},
+    { name: "CRC Insurance Services", prem: 1100500, subs: 134, quotes: 100, binds: 78},
+    { name: "EPIC Insurance Services", prem: 1080734, subs: 178, quotes: 34, binds: 34},
+    { name: "Lockton Companies", prem: 900300, subs: 134, quotes: 100, binds: 78},
+  },
+  local!pick,
+
+  {
+    #"SYSTEM_SYSRULES_columnsLayout"(
+      columns: {
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_gridField_v1"(
+              label: "Top Brokers",
+              labelPosition: "COLLAPSED",
+              data: local!brokers,
+              columns: {
+                #"SYSTEM_SYSRULES_gridColumn"(
+                  label: "Broker",
+                  sortfield: "name",
+                  value: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                    value: {
+                      #"SYSTEM_SYSRULES_richTextItem_v1"(
+                        text: fv!row.name,
+                        link: #"SYSTEM_SYSRULES_dynamicLink"(
+                          value: fv!identifier,
+                          saveInto: local!pick
+                        ),
+                        linkStyle: "STANDALONE"
+                      )
+                    }
+                  ),
+                  width: "1X"
+                ),
+                #"SYSTEM_SYSRULES_gridColumn"(
+                  label: "Sum of Premium",
+                  sortField: "prem",
+                  value: dollar(fv!row.prem,0),
+                  align: "END"
+                )
+              },
+              initialSorts: {
+                #"SYSTEM_SYSRULES_sortInfo"(
+                  field: "prem"
+                )
+              },
+              pagingSaveInto: local!paging,
+              validations: {}
+            )
+
+          },
+          width: "AUTO",
+          showWhen: isnull(local!pick)
+        ),
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_cardLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_richTextDisplayField"(
+                  label: "Rich Text",
+                  labelPosition: "COLLAPSED",
+                  value: {
+                    #"SYSTEM_SYSRULES_richTextIcon"(
+                      icon: "arrow-left",
+                      link: #"SYSTEM_SYSRULES_dynamicLink"(
+                        value: null(),
+                        savEInto: local!pick
+                      ),
+                      linkStyle: "STANDALONE",
+                      color: "SECONDARY",
+                      size: "MEDIUM_PLUS"
+                    ),
+                    "  ",
+                    #"SYSTEM_SYSRULES_richTextItem_v1"(
+                      text: local!brokers[local!pick].name,
+                      size: "MEDIUM_PLUS",
+                      style: "STRONG"
+                    )
+                  }
+                ),
+                #"SYSTEM_SYSRULES_columnsLayout"(
+                  columns: {
+                    #"SYSTEM_SYSRULES_columnLayout"(
+                      contents: {
+                        #"SYSTEM_SYSRULES_progressBarField"(
+                          label: "Rating",
+                          labelPosition: "ADJACENT",
+                          percentage: 85 - local!pick*2.7,
+                          color: if ( local!pick &lt; 3,
+                          "POSITIVE",
+                          "ACCENT"
+                          ),
+                          style: "THICK"
+                        ),
+                        #"SYSTEM_SYSRULES_integerField"(
+                          label: "Years",
+                          labelPosition: "ADJACENT",
+                          value: local!pick+5,
+                          saveInto: {},
+                          refreshAfter: "UNFOCUS",
+                          readOnly: true,
+                          validations: {}
+                        ),
+                        #"SYSTEM_SYSRULES_textField"(
+                          label: "Total Premiums",
+                          labelPosition: "ADJACENT",
+                          value: "$50mm-75mm",
+                          saveInto: {},
+                          refreshAfter: "UNFOCUS",
+                          readOnly: true,
+                          validations: {}
+                        ),
+                        #"SYSTEM_SYSRULES_paragraphField"(
+                          label: "Summary",
+                          labelPosition: "ABOVE",
+                          value: if( mod(local!pick, 2),
+                          "Donec porta molestie augue ornare rhoncus. Integer et placerat mauris. Sed sollicitudin cursus lacus, eget feugiat sem tristique consequat. Vestibulum a tortor purus. Praesent ac velit sed mi condimentum iaculis. Proin eu dui tincidunt lectus iaculis blandit vel et sapien. Donec fringilla mi quis lacus suscipit",
+                          "Phasellus tempor fermentum nibh, non egestas justo maximus ut. Mauris lacinia risus vitae consectetur vehicula. Quisque ut lacus sollicitudin justo interdum aliquet ut in leo. Quisque consectetur purus lacus, ut ultricies enim venenatis in. Phasellus lacinia neque ligula. Duis vehicula risus porta faucibus fringilla. Maecenas efficitur massa sed nisl condimentum mollis. Sed vel mauris eu elit consequat accumsan volutpat vel erat. "
+                          ),
+                          saveInto: {},
+                          refreshAfter: "UNFOCUS",
+                          height: "MEDIUM",
+                          readOnly: true,
+                          validations: {}
+                        )
+                      }
+                    ),
+                    #"SYSTEM_SYSRULES_columnLayout"(
+                      contents: {
+                        #"SYSTEM_SYSRULES_pieChartField"(
+                          label: "Lines",
+                          labelPosition: "ABOVE",
+                          series: {
+                            #"SYSTEM_SYSRULES_chartSeries"(label: "A&amp;E", data: 1),
+                            #"SYSTEM_SYSRULES_chartSeries"(label: "MPL", data: 2+local!pick),
+                            #"SYSTEM_SYSRULES_chartSeries"(label: "APL", data: 3)
+                          },
+                          colorScheme: "OCEAN"
+                        )
+                      }
+                    )
+                  },
+                  showDividers: true
+                )
+              },
+              height: "AUTO",
+              showWhen: not(isnull(local!pick)),
+              style: "NONE",
+              marginBelow: "STANDARD"
+            )
+          }
+        )
+      },
+      showDividers: true
+    )
+  }
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e540-6323-8000-9bf9-011c48011c48_53746"/>
+    </history>
+</contentHaul>

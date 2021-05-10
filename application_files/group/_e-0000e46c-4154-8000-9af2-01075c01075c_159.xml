@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_e-0000e46c-4154-8000-9af2-01075c01075c_162</versionUuid>
+    <group>
+        <name>Workforce Safety Facilities Managers</name>
+        <securityMap>SECURITYMAP_TEAM</securityMap>
+        <uuid>_e-0000e46c-4154-8000-9af2-01075c01075c_159</uuid>
+        <groupTypeUuid>SYSTEM_GROUP_TYPE_CUSTOM</groupTypeUuid>
+        <description>Facilities managers are responsible for managing the capacity for facilities and allocating Areas to Departments within the organization.</description>
+        <delegatedCreation>false</delegatedCreation>
+        <memberPolicy>MEMBERPOLICY_CLOSED</memberPolicy>
+        <viewingPolicy>VIEWINGPOLICY_LOW</viewingPolicy>
+        <attributes/>
+    </group>
+    <members>
+        <users/>
+        <groups/>
+    </members>
+    <admins>
+        <users/>
+        <groups>
+            <groupUuid>_e-0000e428-dd70-8000-d620-011e94011e94_31</groupUuid>
+        </groups>
+    </admins>
+    <ruleSet/>
+    <history>
+        <historyInfo versionUuid="_e-0000e46c-4154-8000-9af2-01075c01075c_162"/>
+        <historyInfo versionUuid="_e-0000e4c4-1482-8000-9af4-01075c01075c_205"/>
+        <historyInfo versionUuid="_e-0000e4c4-1482-8000-9af4-01075c01075c_210"/>
+        <historyInfo versionUuid="_e-0000e520-c4ce-8000-9af7-01075c01075c_220"/>
+        <historyInfo versionUuid="_e-0000e520-c4a2-8000-9afa-01075c01075c_269"/>
+    </history>
+</groupHaul>
